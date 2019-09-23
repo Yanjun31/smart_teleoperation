@@ -1,0 +1,9 @@
+<launch>
+  <arg name= "name_space" default= "robot0"/>
+  <arg name= "topic_name" default= "-n lidar_1"/>
+  <include file= "$(find smart_teleoperation)/launch/controller.launch">
+    <arg name= "name_space" value= "$(arg name_space)"/>
+    <arg name= "topic_name" value= "$(arg topic_name)"/>
+  </include>
+  <include file= "$(find stdr_launchers)/launch/server_with_map_and_gui.launch" />
+</launch>
